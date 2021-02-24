@@ -61,9 +61,49 @@ function addList(...nums) {
   return sum;
 }
 
-function addList(...nums){
-    return nums.reduce((sum,num) => sum + num, 0)
+function addList(...nums) {
+  return nums.reduce((sum, num) => sum + num, 0);
 }
-console.log(addList(5,7,8,8));
+console.log(addList(5, 7, 8, 8));
 
+// Challenge: 07-reverseUpcaseString
 
+// Difficulty: Basic
+
+// Prompt:
+
+// - Write a function called reverseUpcaseString that accepts a single string argument, then returns the string with its characters in reverse order and converts all characters to uppercase.
+
+// Examples:
+
+// reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
+
+function reverseUpcaseString(str) {
+  return str.split("").reverse().join("").toUpperCase()
+}
+// function reverseUpcaseString(str) {
+//   return str.split('').reverse().map(c => c.toUpperCase()).join('');
+// }
+
+console.log(reverseUpcaseString("SEI Rocks!"));
+
+// - Write a function called removeEnds that accepts a single string argument, then returns the a string with the first and last characters removed.
+// - If the length of the string argument is less than 3, return an empty string.
+
+// Examples:
+
+// removeEnds('SEI Rocks!'); //=> "EI Rocks"
+// removeEnds('a'); //=> "" (empty string)
+
+function removeEnds(str){
+  if (str.length < 3) return ''
+  return str.substring(1, str.length - 1);
+}
+//substring() vs substr() LOOKUP
+
+// function removeEnds(str) {
+//   if (str.length < 3) return "";
+//   return str.substr(1, str.length - 2);
+// }
+
+console.log(removeEnds('SEI Rocks!'))
