@@ -107,3 +107,58 @@ function removeEnds(str){
 // }
 
 console.log(removeEnds('SEI Rocks!'))
+
+// - Write a function named charCount that accepts a single string argument and returns an object that represents the count of each character in the string.
+// - The returned object should have keys that represent the character with its value set to the how many times the character appears in the string argument.
+// - Upper and lower case characters should be counted separately.
+// - Space characters should be count too.
+// charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
+
+// function charCount(str){
+//   let count = {}
+//   for (i=0; i < str.length; i++){
+//     let char = str.charAt(i);
+//     if (count[char]) {
+//       count[char]++;
+//     } else {
+//       count[char] = 1;
+//     }
+//   }
+//   return count
+// }
+function charCount(str) {
+  return str.split('').reduce(function(countObj, char) {
+    countObj[char] = countObj[char] ? ++countObj[char] : 1;
+    return countObj;
+  }, {});
+}
+console.log(charCount("tomato"));
+
+// Prompt:
+
+// - Write a function called formatWithPadding that accepts three arguments:
+//   - A numeric argument (an integer) representing the number to format.
+//   - A string argument (a single character) representing the character used to "pad" the returned string to a minimum length.
+//   - Another numeric argument (an integer) representing the length to "pad" the returned string to.
+// - The function should return the integer as a string, "left padded" to the length of the 3rd arg using the character provided in the 2nd arg.
+// - If the length of the integer converted to a string is equal or greater than the 3rd argument, no padding is needed - just return the integer as a string.
+
+// Examples:
+
+// formatWithPadding(123, '0', 5); //=> "00123"
+// formatWithPadding(42, '*', 10); //=> "********42"
+// formatWithPadding(1234, '*', 3); //=> "1234"
+
+function formatWithPadding(int, str, num2) {
+  return int.toString().padStart(num2, str);
+}
+
+// function formatWithPadding(int, char, length) {
+//   let result = int.toFixed(0);
+//   while (result.length < length) {
+//     result = char + result;
+//   }
+//   return result;
+// }
+
+console.log(formatWithPadding(1142, '.', 10))
