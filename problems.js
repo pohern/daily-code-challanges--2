@@ -162,3 +162,15 @@ function formatWithPadding(int, str, num2) {
 // }
 
 console.log(formatWithPadding(1142, '.', 10))
+
+// . Write a jQuery or JS function that takes two integer parameters. Starting with the sum of your two parameters, print a countdown to the console (one second at a time) until the logs reach zero
+
+function countDown(num1, num2){
+  let num = num1 + num2
+  for (let i=num; i > 0; i--){
+    setTimeout(1000)
+    num-- 
+  }
+}
+
+console.log(countDown(2,5))
