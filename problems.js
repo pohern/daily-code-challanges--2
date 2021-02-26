@@ -165,12 +165,48 @@ console.log(formatWithPadding(1142, '.', 10))
 
 // . Write a jQuery or JS function that takes two integer parameters. Starting with the sum of your two parameters, print a countdown to the console (one second at a time) until the logs reach zero
 
-function countDown(num1, num2){
+
+function countDown(num1, num2) {
   let num = num1 + num2
-  for (let i=num; i > 0; i--){
-    setTimeout(1000)
-    num-- 
+  console.log(num)
+  for (let i = num; i > 0; i--) {
+    num--;
+    console.log(num)
   }
 }
 
-console.log(countDown(2,5))
+countDown(2,5)
+
+// Write a jQuery or JS function that would allow a <div> element with a click event listener to be operated using keyboard controls
+
+{/* <div onclick(keyDown,{(e => {
+  if (e.which == 37){
+    // LEFT
+  } else if (e.which == 38){
+    //UP
+  } else if (e.which == 39){
+    //Right
+  } else if (e.which == 40){
+    //Dowm
+  }
+})})>
+
+</div> */}
+
+// document.getElementById("div").addEventListener("keydown", function (event) {
+//   if (event.which == 13) {
+//     add();
+//   }
+// });
+// function control(e) {
+//   doodler.style.bottom = doodlerBottomSpace + "px";
+//   if (e.key === "ArrowLeft") {
+//     moveLeft();
+//   } else if (e.key === "ArrowRight") {
+//     moveRight();
+//   } else if (e.key === "ArrowUp") {
+//     moveStraight();
+//   }
+// }
+
+// Write a jQuery or JS function that would give empty heading elements (<h1></h1>, <h2></h2>...)a “role” attribute value of “presentation”
