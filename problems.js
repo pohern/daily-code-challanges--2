@@ -186,7 +186,7 @@ function countDown(num1, num2) {
   let num = num1 + num2;
   
   for (let i = num; i > 0; i--) {
-    setTimeout(1000)
+    // setTimeout(1000)
     num--;
     console.log(num);
   }
@@ -196,7 +196,7 @@ countDown(3,6)
 
 // Write a jQuery or JS function that would allow a <div> element with a click event listener to be operated using keyboard controls
 
-{/* <div onclick(keyDown,{(e => {
+/* <div onclick(keyDown,{(e => {
   if (e.which == 37){
     // LEFT
   } else if (e.which == 38){
@@ -208,7 +208,7 @@ countDown(3,6)
   }
 })})>
 
-</div> */}
+</div> */
 
 // document.getElementById("div").addEventListener("keydown", function control(e) {
 //   if (e.key === "ArrowLeft") {
@@ -240,6 +240,3 @@ countDown(3,6)
 // if (x != true){
 //   x.setAttribute("role", "presentation");
 // }
-
-var obj
-console.log(obj)
