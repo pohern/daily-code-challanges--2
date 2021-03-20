@@ -315,3 +315,34 @@ function fizzbuzz(n){
   }
 }
 fizzbuzz(20)
+
+// #4 Anagram
+// Definition:- A word is an anagram of another word if they are using the same letters with the same quantity, but arranged differently.
+// PROBLEM:- write a function that checks if two provided strings are anagrams of each other; letter casing shouldn’t matter. Also, consider only characters, not spaces or punctuation. For Example:
+// anagram('fried','fired') // true;
+// anagram('gainly', 'lying') //true;
+// anagram('listen', 'bye')  // false;
+
+const buildCharObject = str => {
+  const charObj = {}
+  for ( let char of str.replace(/[^\w]/g).toLowerCase()){
+    charObj[char] = charObj + 1 || 1
+  }
+  return charObj
+}
+
+const anagram = (str1, str2) => {
+  const oneCharObject = buildCharObject(str1)
+  const twoCharObject = buildCharObject(str2)
+  if (Object.keys(oneCharObject).length !== Object.keys(twoCharObject).length){
+    return false
+  }
+  for (let char in oneCharObject){
+    if (oneCharObject[char] !== twoCharObject[char]){
+      return false
+    }
+  }
+  return true
+}
+console.log(anagram('gainly', 'lying'))
+console.log(anagram("fried", "fired"));
