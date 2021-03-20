@@ -423,3 +423,13 @@ function replaceChar(inputStr, replaceThis, withThis) {
 }
 
 console.log(replaceChar('hello there', 'e', 'P'))
+
+// #9 Remove all duplicates from an array of integers
+// PROBLEM:- write a function that will return an array without duplicate values in the array.
+
+function removeDuplicate(arr) {
+  let result = [...new Set(arr)];
+  return result;
+}
+
+console.log(removeDuplicate([1,1,1,2,3,3,5,6,7]))
