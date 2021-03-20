@@ -252,3 +252,40 @@ function isPalindrome(str){
 }
 
 console.log(isPalindrome('turtle'))
+
+// #2 Fibonacci
+// Definition:- Fibonacci sequence is basically a sequence of number where every number in the sequence is the sum of the two previous one. A Fibonacci sequence is something look like this — 0,1,1,2,3,5,8,13,21,….
+// PROBLEM:- write a function that returns the nth entry in the Fibonacci sequence, where n is a number you pass in as an argument to the function.
+
+function Fibonacci(num){
+  let result = [0, 1]
+  for (let i=2; i<=num; i++){
+    let prevNum1 = result[i-1]
+    let prevNum2 = result[i-2]
+    result.push(prevNum1 + prevNum2)
+  }
+  return result[num]
+}
+
+console.log(Fibonacci(6))
+
+function fibonacci(num) {
+  if (num < 2) {
+    return num;
+  }
+  return fibonacci(num - 1) + fibonacci(num - 2);
+}
+
+console.log(fibonacci(6));
+
+function F(n) {
+  if (n == 0) {
+    return 0;
+  }
+  if (n == 1) {
+    return 1;
+  } else {
+    return F(n - 1) + F(n - 2);
+  }
+}
+console.log(F(12));
