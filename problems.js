@@ -383,3 +383,27 @@ function reverse(str){
 }
 
 console.log(reverse('hola'))
+
+// #7 Title Case a String
+// PROBLEM:- Write a function which takes a string of two or more word and capitalize the first letter of each word.
+
+function upperCaseFirst(str) {
+  let valueOfFirstChar = str.charCodeAt(0);
+  console.log(valueOfFirstChar);
+  let upperCaseLetter = String.fromCharCode(valueOfFirstChar - 32);
+  console.log(upperCaseLetter);
+  let restOfString = str.slice(1);
+  console.log(restOfString);
+  let finalResult = upperCaseLetter + restOfString;
+  console.log(finalResult);
+  return finalResult;
+}
+
+function titleCase(inputStr) {
+  let token = inputStr.split(" ");
+  let upperCaseToken = token.map((x) => upperCaseFirst(x));
+  let result = upperCaseToken.join(" ");
+  console.log(result);
+}
+
+console.log(titleCase('lets see if this works'))
