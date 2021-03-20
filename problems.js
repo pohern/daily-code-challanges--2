@@ -166,16 +166,33 @@ console.log(formatWithPadding(1142, '.', 10))
 // . Write a jQuery or JS function that takes two integer parameters. Starting with the sum of your two parameters, print a countdown to the console (one second at a time) until the logs reach zero
 
 
+// function countDown() {
+//   let num1 = parseInt(prompt("Enter first number: "))
+
+//   let num2 = parseInt(prompt('Enter second number: '))
+  
+//   let num = num1 + num2
+//   console.log(num)
+//   for (let i = num; i > 0; i--) {
+//     num--;
+//     console.log(num)
+//   }
+// }
+
+// setInterval(countDown(), 1000)
+
+
 function countDown(num1, num2) {
-  let num = num1 + num2
-  console.log(num)
+  let num = num1 + num2;
+  
   for (let i = num; i > 0; i--) {
+    setTimeout(1000)
     num--;
-    console.log(num)
+    console.log(num);
   }
 }
 
-countDown(2,5)
+countDown(3,6)
 
 // Write a jQuery or JS function that would allow a <div> element with a click event listener to be operated using keyboard controls
 
@@ -193,13 +210,21 @@ countDown(2,5)
 
 </div> */}
 
-// document.getElementById("div").addEventListener("keydown", function (event) {
-//   if (event.which == 13) {
-//     add();
-//   }
+// document.getElementById("div").addEventListener("keydown", function control(e) {
+//   if (e.key === "ArrowLeft") {
+//     LEFT;
+//   } else if (e.key === "ArrowRight") {
+//     RIGHT;
+//   } else if (e.key === "ArrowUp") {
+//     UP;
+//   } else if (e.key === 'ArrowDown'){
+//     DOWN;
+// }
 // });
+
+
+
 // function control(e) {
-//   doodler.style.bottom = doodlerBottomSpace + "px";
 //   if (e.key === "ArrowLeft") {
 //     moveLeft();
 //   } else if (e.key === "ArrowRight") {
@@ -210,3 +235,11 @@ countDown(2,5)
 // }
 
 // Write a jQuery or JS function that would give empty heading elements (<h1></h1>, <h2></h2>...)a “role” attribute value of “presentation”
+
+// let x = document.getElementsByName('h1').hasAttribute('role')
+// if (x != true){
+//   x.setAttribute("role", "presentation");
+// }
+
+var obj
+console.log(obj)
