@@ -346,3 +346,31 @@ const anagram = (str1, str2) => {
 }
 console.log(anagram('gainly', 'lying'))
 console.log(anagram("fried", "fired"));
+
+// #5 Find the Vowels
+// It’s not that kind of challenging compared to others. but that doesn’t detract from the fact that you could come across it during a job interview.
+// PROBLEM:- write a function that takes a string as an argument and returns the number of vowels contained in that string.
+
+// const findVowel = (str) => {
+//   let count = 0
+//   let vowel = ['a', 'e', 'i', 'o', 'u']
+//   for (let char of str.toLowerCase()){
+//     if (vowel.includes(char)){
+//       count ++
+//     }
+//   }
+//   return count
+// }
+
+function findVowel(str){
+  let count = 0;
+  let vowel = ["a", "e", "i", "o", "u"];
+  for (let char of str.toLowerCase()) {
+    if (vowel.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(findVowel('hello'))
