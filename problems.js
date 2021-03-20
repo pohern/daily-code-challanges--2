@@ -240,3 +240,15 @@ countDown(3,6)
 // if (x != true){
 //   x.setAttribute("role", "presentation");
 // }
+
+
+// #1 Palindrome
+// definition:- Palindrome is a word, sentence or character sequence which reads the same as we reverse it. Like- “mam”, “racecar” etc.
+// PROBLEM:- Write a function that will check the string is a palindrome or not.
+
+function isPalindrome(str){
+  str = str.toLowerCase()
+  return str === str.split('').reverse().join('')
+}
+
+console.log(isPalindrome('turtle'))
