@@ -387,23 +387,39 @@ console.log(reverse('hola'))
 // #7 Title Case a String
 // PROBLEM:- Write a function which takes a string of two or more word and capitalize the first letter of each word.
 
-function upperCaseFirst(str) {
-  let valueOfFirstChar = str.charCodeAt(0);
-  console.log(valueOfFirstChar);
-  let upperCaseLetter = String.fromCharCode(valueOfFirstChar - 32);
-  console.log(upperCaseLetter);
-  let restOfString = str.slice(1);
-  console.log(restOfString);
-  let finalResult = upperCaseLetter + restOfString;
-  console.log(finalResult);
-  return finalResult;
+// function upperCaseFirst(str) {
+//   let valueOfFirstChar = str.charCodeAt(0);
+//   // console.log(valueOfFirstChar);
+//   let upperCaseLetter = String.fromCharCode(valueOfFirstChar - 32);
+//   // console.log(upperCaseLetter);
+//   let restOfString = str.slice(1);
+//   // console.log(restOfString);
+//   let finalResult = upperCaseLetter + restOfString;
+//   // console.log(finalResult);
+//   return finalResult;
+// }
+
+// function titleCase(inputStr) {
+//   let token = inputStr.split(" ");
+//   let upperCaseToken = token.map((x) => upperCaseFirst(x));
+//   let result = upperCaseToken.join(" ");
+//   // console.log(result);
+// }
+
+// console.log(titleCase('lets see if this works'))
+
+// #8 Replace One Character With Another
+// PROBLEM:- Replace every occurrence of a given character in a string with another.
+function replaceChar(inputStr, replaceThis, withThis) {
+  let retVal = [];
+  for (let i = 0; i < inputStr.length; i++) {
+    if (inputStr[i] === replaceThis) {
+      retVal.push(withThis);
+    } else {
+      retVal.push(inputStr[i]);
+    }
+  }
+  return retVal.join("");
 }
 
-function titleCase(inputStr) {
-  let token = inputStr.split(" ");
-  let upperCaseToken = token.map((x) => upperCaseFirst(x));
-  let result = upperCaseToken.join(" ");
-  console.log(result);
-}
-
-console.log(titleCase('lets see if this works'))
+console.log(replaceChar('hello there', 'e', 'P'))
