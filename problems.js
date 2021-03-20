@@ -278,14 +278,40 @@ function fibonacci(num) {
 
 console.log(fibonacci(6));
 
-function F(n) {
-  if (n == 0) {
-    return 0;
-  }
-  if (n == 1) {
-    return 1;
-  } else {
-    return F(n - 1) + F(n - 2);
+// function F(n) {
+//   if (n == 0) {
+//     return 0;
+//   }
+//   if (n == 1) {
+//     return 1;
+//   } else {
+//     return F(n - 1) + F(n - 2);
+//   }
+// }
+// console.log(F(12));
+
+// #3 FizzBuzz
+// It is the most popular challenge in a coding interview. So, before going for an interview you should check this out.
+// PROBLEM:- Write a function that does the following:
+// console logs the numbers from 1 to n, where n is the integer the function takes as its parameter
+// logs fizz instead of the number for multiples of 3
+// logs buzz instead of the number for multiples of 5
+// logs fizzbuzz for numbers that are multiples of both 3 and 5
+
+function fizzbuzz(n){
+  for (let i=1 ; i <= n ; i++){
+    if (i % 3 === 0 && i % 5 === 0){
+      console.log('fizzbuzz')
+    }
+    else if ( i % 3 === 0){
+      console.log('fizz')
+    }
+    else if (i % 5 === 0){
+      console.log('buzz')
+    }
+    else {
+      console.log(i)
+    }
   }
 }
-console.log(F(12));
+fizzbuzz(20)
