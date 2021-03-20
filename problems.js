@@ -374,3 +374,12 @@ function findVowel(str){
 }
 
 console.log(findVowel('hello'))
+
+// #6 String Reverse
+// PROBLEM:- Write a function that takes a string as an argument and return a reverse version of the given string.
+
+function reverse(str){
+  return str = str.toLowerCase().split('').reverse().join('')
+}
+
+console.log(reverse('hola'))
