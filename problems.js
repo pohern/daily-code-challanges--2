@@ -433,3 +433,26 @@ function removeDuplicate(arr) {
 }
 
 console.log(removeDuplicate([1,1,1,2,3,3,5,6,7]))
+
+// #10 Find all pairs in an array of integers whose sum is equal to a given number
+// PROBLEM:- Write a function that will pair up the array element whose sum is equal to a given number.
+
+let arr = [1,5,6,1,0,1, -3, 9]
+
+const findSumPairs = (arr, value) => {
+  let sumsLookup = {}
+  let output = []
+
+  for (let i =0 ; i < arr.length ; i++){
+    let targetVal = value - arr[i]
+
+    if (sumsLookup[targetVal]){
+      output.push([arr[i], targetVal])
+    }
+
+    sumsLookup[arr[i]] = true
+  }
+  return output
+}
+
+console.log(findSumPairs(arr, 6));
