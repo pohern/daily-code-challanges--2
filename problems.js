@@ -587,3 +587,26 @@ var minWindow = function (s, t) {
 };
 
 console.log(minWindow("ADOBECODEBANC", 'ABC'));
+
+// ANAGRAM  AGAIN 
+var isAnagram = function (s, t) {
+  if (s.length !== t.length) {
+    return false;
+  }
+  const lookup = {};
+  for (let i = 0; i < s.length; i++) {
+    let char = s[i];
+    lookup[char] ? (lookup[char] += 1) : (lookup[char] = 1);
+  }
+  for (let i = 0; i < t.length; i++) {
+    let char = t[i];
+    if (!lookup[char]) {
+      return false;
+    } else {
+      lookup[char] -= 1;
+    }
+  }
+  return true;
+};
+
+console.log(isAnagram("anagram", "nagaram"));
