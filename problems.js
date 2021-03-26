@@ -536,3 +536,54 @@ var characterReplacement = function (s, k) {
 };
 
 console.log(characterReplacement('ABAB', 2))
+
+
+// Minimun Window Substring
+// Given two strings s and t, return the minimum window in s which will contain all the characters in t. If there is no such window in s that covers all characters in t, return the empty string "".
+
+// Note that If there is such a window, it is guaranteed that there will always be only one unique minimum window in s.
+
+var minWindow = function (s, t) {
+  if (t.length === 0) throw Error`t can't be of length 0`;
+  if (s.length < t.length) return "";
+  let minSubString = null;
+  let currMatchedLetters = 0;
+  let targetMap = {};
+  let currMap = {};
+  for (let ch of t) {
+    if (targetMap[ch] === undefined) {
+      targetMap[ch] = 1;
+      currMap[ch] = 0;
+    } else targetMap[ch]++;
+  }
+  let targetMatchedLetters = Object.keys(targetMap).length;
+  let start = 0;
+  let end = -1;
+  while (end < s.length) {
+    if (currMatchedLetters === targetMatchedLetters) {
+      //update minSubstring
+      if (minSubString === null || end - start + 1 < minSubString.length) {
+        minSubString = s.slice(start, end + 1);
+      }
+      //increament start and update
+      let startChar = s[start];
+      if (currMap[startChar] !== undefined) {
+        currMap[startChar]--;
+        if (currMap[startChar] < targetMap[startChar]) currMatchedLetters--;
+      }
+      start++;
+    } else {
+      end++;
+      if (end < s.length) {
+        let endChar = s[end];
+        if (currMap[endChar] !== undefined) {
+          currMap[endChar]++;
+          if (currMap[endChar] === targetMap[endChar]) currMatchedLetters++;
+        }
+      }
+    }
+  }
+  return minSubString || "";
+};
+
+console.log(minWindow("ADOBECODEBANC", 'ABC'));
