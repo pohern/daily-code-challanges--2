@@ -278,6 +278,12 @@ function fibonacci(num) {
 
 console.log(fibonacci(6));
 
+function FFibonacci(n) { 
+    if (n <= 2) return 1; 
+    return FFibonacci(n - 1) + FFibonacci(n - 2);
+}
+console.log(FFibonacci(10) + ' here')
+
 // function F(n) {
 //   if (n == 0) {
 //     return 0;
