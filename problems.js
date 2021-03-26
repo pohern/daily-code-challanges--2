@@ -488,3 +488,22 @@ function mostFrequent(arr){
 }
 
 mostFrequent(arr)
+
+// Longest Substring without repeating hcars
+
+var lengthOfLongestSubstring = function (s) {
+  let map = new Map();
+  let res = 0;
+  let st = 0;
+
+  for (let end = 0; end < s.length; end++) {
+    if (map.has(s[end])) {
+      st = Math.max(st, map.get(s[end]) + 1);
+    }
+    map.set(s[end], end);
+    res = Math.max(res, end - st + 1);
+  }
+  return res;
+};
+
+console.log(lengthOfLongestSubstring("abcabcbb") + ' times');
