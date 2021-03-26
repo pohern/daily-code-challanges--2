@@ -456,3 +456,29 @@ const findSumPairs = (arr, value) => {
 }
 
 console.log(findSumPairs(arr, 6));
+
+// Find the Most Frequent Item in an Array
+
+arr = [2, "b", 1, "a", 2, 6, "a", 3, "b", 2, 9, 3, 2];
+
+function mostFrequent(arr){
+  let mf = 1 //most frequent count
+  let m = 0 //current count
+  let item
+
+  for(let i = 0; i < arr.length; i++){
+    for(let j = i; j < arr.length; j++){
+      if( arr[i] == arr[j]){
+        m++
+      }
+      if( mf < m){
+        mf = m
+      }
+      item = arr[i]
+   }
+   m = 0
+  }
+  console.log(item + " " + mf + " times");
+}
+
+mostFrequent(arr)
