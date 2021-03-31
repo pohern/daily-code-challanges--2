@@ -610,3 +610,37 @@ var isAnagram = function (s, t) {
 };
 
 console.log(isAnagram("anagram", "nagaram"));
+
+// LRU CACHE
+strArr = ['A', 'B', 'C', 'D', 'A', 'E', 'D', 'Z']
+
+
+function LRUCache(strArr) {
+  //  initialize an index variable that would NOT be an output of the findIndex method
+  let idx = -5;
+  let newCache = [];
+  // Loop through and access each element of the input array
+  strArr.forEach((ele) => {
+    // now idx will return the current element's index.
+    idx = newCache.findIndex((l) => l === ele);
+    // now, we'll use a loop to check if the element exists in our new cache array
+    // if it doesn't exist, we'll add it
+    // if it does exist, we'll delete it from the newCache & add it to the end
+    if (idx < 0) {
+      newCache.push(ele);
+    } else {
+      // remove duplicate element
+      newCache.splice(idx, 1);
+      // add element to the end of cache
+      newCache.push(ele);
+    }
+  });
+  // cut array length to 5
+  let actCache = newCache.slice(0).slice(-5);
+  // join arry using hyphens
+  actCache = actCache.join("-");
+  console.log(actCache);
+  return actCache;
+}
+
+LRUCache(strArr)
