@@ -614,15 +614,14 @@ console.log(isAnagram("anagram", "nagaram"));
 // LRU CACHE
 strArr = ['A', 'B', 'C', 'D', 'A', 'E', 'D', 'Z']
 
-
 function LRUCache(strArr) {
   //  initialize an index variable that would NOT be an output of the findIndex method
-  let idx = -5;
+  // let idx = -5;
   let newCache = [];
   // Loop through and access each element of the input array
   strArr.forEach((ele) => {
     // now idx will return the current element's index.
-    idx = newCache.findIndex((l) => l === ele);
+    let idx = newCache.findIndex((l) => l === ele);
     // now, we'll use a loop to check if the element exists in our new cache array
     // if it doesn't exist, we'll add it
     // if it does exist, we'll delete it from the newCache & add it to the end
@@ -644,3 +643,12 @@ function LRUCache(strArr) {
 }
 
 LRUCache(strArr)
+
+
+function add(x) {
+  return this + x
+}
+
+const age = 25
+const myAge = add.call(age, 2)
+console.log(myAge)
