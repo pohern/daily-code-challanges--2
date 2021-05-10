@@ -677,6 +677,15 @@ const solution1 = (arr) => {
   return left == right ? "" : left > right ? "Left" : "Right";
 };
 
+
+
+// Build a function that takes as input a string of letters and returns an encoded version of the string. The encoding scheme converts letters regardless of case, that appear once in the string to the '#' character and letters that appear more than once to the '&' character. Each letter should be encoded according to this scheme. The following strings and their conversions are provided as examples.
+// Input -> Output
+// one ->  ###
+// three -> ###&&
+// Heartbreak hotel -> &&&&&#&&&##&#&&#
+
+
 const strToEncode = 'Let us test this'
 
 const encode = (strToEncode) => {
