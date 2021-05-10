@@ -672,11 +672,11 @@ const solution1 = (arr) => {
 // three -> ###&&
 // Heartbreak hotel -> &&&&&#&&&##&#&&#
 
-const strToEncode = "TTTFGB Yrf";
+const strToEncode = "Heartbreak hotel";
 
 function encode(str) {
-  var letterCount = {};
-  var letters = str.toLowerCase().split("");
+  let letterCount = {};
+  let letters = str.toLowerCase().split("");
 
   letters.forEach(function (letter) {
     letterCount[letter] = (letterCount[letter] || 0) + 1;
@@ -699,3 +699,22 @@ function encode(str) {
 // }
 
 console.log(encode(strToEncode));
+
+const encodeString = (str) => {
+  let encodedStr = "";
+  const dupes = new Set();
+  for (let i = 0; i < str.length; i++) {
+    if ((str.match(new RegExp(str.charAt(i), "gi")) || []).length > 1) {
+      dupes.add(str[i]);
+    }
+  }
+  for (let i = 0; i < str.length; i++) {
+    if (dupes.has(str.charAt(i))) {
+      encodedStr += "&";
+    } else {
+      encodedStr += "#";
+    }
+  }
+  return encodedStr;
+};
+console.log(encodeString("Heartbreak hotel"));
