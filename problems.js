@@ -718,3 +718,77 @@ const encodeString = (str) => {
   return encodedStr;
 };
 console.log(encodeString("Heartbreak hotel"));
+
+function crop(message, K) {
+  if (K < 1) return "";
+  const regex = new RegExp(`^.{0,${K - 1}}[^ ](?= |$)`);
+  return (message.match(regex) || [""])[0];
+}
+
+// .match returns an array with the matched text as the first element, or null if no match. The alternative [ "" ] will provide an empty string as a return value if there is no match (when the first word is longer than K).
+
+// The regular expression, broken down, means:
+
+// ^: match start of string
+// .: followed by any character
+// {0,10}: ... up to ten times (one less than K)
+// [^ ]: followed by a character that is not a space
+// (?=…): this is an assertion; it means the following expression must match, but is not included in the result:
+// : followed by a space
+// |: or
+// $: end-of-string
+
+const crop = (message, maxLength) => {
+  const part = message.substring(0, maxLength + 1);
+  return part.substring(0, part.lastIndexOf(" ")).trimEnd();
+};
+
+// function solution(U, N) {
+//   return new Promise((resolve, reject) => {
+//     // Resolve the promise with the result
+//     const newArr = (list) => Array.from(new Set(list));
+
+//     getLikedBrands(U.id).then((likedBrands) => likedBrands.length >= N)
+//       ? resolve(likedBrands.slice(0, N).map((b) => b.name))
+//       : getTopBrandsForGender(U.gender).then((topBrands) => {
+//           const Brands = newArr(
+//             [...likedBrands, ...topBrands].map((b) => b.name)
+//           );
+
+//           Brands.length >= N
+//             ? resolve(Brands.slice(0, N))
+//             : reject(new CustomError("Not enough data"));
+//         });
+//   });
+// }
+
+// "use strict";
+
+// /* global CustomError, getLikedBrands, getTopBrandsForGender */
+
+// function solution(U, N) {
+//   return new Promise(async (resolve, reject) => {
+//     try {
+//       const likedBrands = await getLikedBrands(U.id);
+//       const topBrandsForGender = await getTopBrandsForGender(U.gender);
+
+//       const sampleSpace = likedBrands.map((brand) => brand.name || "");
+
+//       topBrandsForGender.forEach((brand) => {
+//         if (!sampleSpace.includes(brand.name)) {
+//           sampleSpace.push(brand.name);
+//         }
+//       });
+
+//       if (sampleSpace.length < N) {
+//         reject(new CustomError("Not enough data"));
+//       }
+
+//       const topBrands = sampleSpace.slice(0, N);
+
+//       resolve(topBrands);
+//     } catch (error) {
+//       reject(new CustomError("Not enough data"));
+//     }
+//   });
+// }
