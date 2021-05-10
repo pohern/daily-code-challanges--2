@@ -79,7 +79,7 @@ console.log(addList(5, 7, 8, 8));
 // reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 
 function reverseUpcaseString(str) {
-  return str.split("").reverse().join("").toUpperCase()
+  return str.split("").reverse().join("").toUpperCase();
 }
 // function reverseUpcaseString(str) {
 //   return str.split('').reverse().map(c => c.toUpperCase()).join('');
@@ -95,8 +95,8 @@ console.log(reverseUpcaseString("SEI Rocks!"));
 // removeEnds('SEI Rocks!'); //=> "EI Rocks"
 // removeEnds('a'); //=> "" (empty string)
 
-function removeEnds(str){
-  if (str.length < 3) return ''
+function removeEnds(str) {
+  if (str.length < 3) return "";
   return str.substring(1, str.length - 1);
 }
 //substring() vs substr() LOOKUP
@@ -106,7 +106,7 @@ function removeEnds(str){
 //   return str.substr(1, str.length - 2);
 // }
 
-console.log(removeEnds('SEI Rocks!'))
+console.log(removeEnds("SEI Rocks!"));
 
 // - Write a function named charCount that accepts a single string argument and returns an object that represents the count of each character in the string.
 // - The returned object should have keys that represent the character with its value set to the how many times the character appears in the string argument.
@@ -127,7 +127,7 @@ console.log(removeEnds('SEI Rocks!'))
 //   return count
 // }
 function charCount(str) {
-  return str.split('').reduce(function(countObj, char) {
+  return str.split("").reduce(function (countObj, char) {
     countObj[char] = countObj[char] ? ++countObj[char] : 1;
     return countObj;
   }, {});
@@ -161,16 +161,15 @@ function formatWithPadding(int, str, num2) {
 //   return result;
 // }
 
-console.log(formatWithPadding(1142, '.', 10))
+console.log(formatWithPadding(1142, ".", 10));
 
 // . Write a jQuery or JS function that takes two integer parameters. Starting with the sum of your two parameters, print a countdown to the console (one second at a time) until the logs reach zero
-
 
 // function countDown() {
 //   let num1 = parseInt(prompt("Enter first number: "))
 
 //   let num2 = parseInt(prompt('Enter second number: '))
-  
+
 //   let num = num1 + num2
 //   console.log(num)
 //   for (let i = num; i > 0; i--) {
@@ -181,10 +180,9 @@ console.log(formatWithPadding(1142, '.', 10))
 
 // setInterval(countDown(), 1000)
 
-
 function countDown(num1, num2) {
   let num = num1 + num2;
-  
+
   for (let i = num; i > 0; i--) {
     // setTimeout(1000)
     num--;
@@ -192,7 +190,7 @@ function countDown(num1, num2) {
   }
 }
 
-countDown(3,6)
+countDown(3, 6);
 
 // Write a jQuery or JS function that would allow a <div> element with a click event listener to be operated using keyboard controls
 
@@ -222,8 +220,6 @@ countDown(3,6)
 // }
 // });
 
-
-
 // function control(e) {
 //   if (e.key === "ArrowLeft") {
 //     moveLeft();
@@ -241,33 +237,32 @@ countDown(3,6)
 //   x.setAttribute("role", "presentation");
 // }
 
-
 // #1 Palindrome
 // definition:- Palindrome is a word, sentence or character sequence which reads the same as we reverse it. Like- “mam”, “racecar” etc.
 // PROBLEM:- Write a function that will check the string is a palindrome or not.
 
-function isPalindrome(str){
-  str = str.toLowerCase()
-  return str === str.split('').reverse().join('')
+function isPalindrome(str) {
+  str = str.toLowerCase();
+  return str === str.split("").reverse().join("");
 }
 
-console.log(isPalindrome('turtle'))
+console.log(isPalindrome("turtle"));
 
 // #2 Fibonacci
 // Definition:- Fibonacci sequence is basically a sequence of number where every number in the sequence is the sum of the two previous one. A Fibonacci sequence is something look like this — 0,1,1,2,3,5,8,13,21,….
 // PROBLEM:- write a function that returns the nth entry in the Fibonacci sequence, where n is a number you pass in as an argument to the function.
 
-function Fibonacci(num){
-  let result = [0, 1]
-  for (let i=2; i<=num; i++){
-    let prevNum1 = result[i-1]
-    let prevNum2 = result[i-2]
-    result.push(prevNum1 + prevNum2)
+function Fibonacci(num) {
+  let result = [0, 1];
+  for (let i = 2; i <= num; i++) {
+    let prevNum1 = result[i - 1];
+    let prevNum2 = result[i - 2];
+    result.push(prevNum1 + prevNum2);
   }
-  return result[num]
+  return result[num];
 }
 
-console.log(Fibonacci(9))
+console.log(Fibonacci(9));
 
 function fibonacci(num) {
   if (num < 2) {
@@ -278,11 +273,11 @@ function fibonacci(num) {
 
 console.log(fibonacci(9));
 
-function FFibonacci(n) { 
-    if (n <= 2) return 1; 
-    return FFibonacci(n - 1) + FFibonacci(n - 2);
+function FFibonacci(n) {
+  if (n <= 2) return 1;
+  return FFibonacci(n - 1) + FFibonacci(n - 2);
 }
-console.log(FFibonacci(6) + ' here')
+console.log(FFibonacci(6) + " here");
 
 // function F(n) {
 //   if (n == 0) {
@@ -304,23 +299,20 @@ console.log(FFibonacci(6) + ' here')
 // logs buzz instead of the number for multiples of 5
 // logs fizzbuzz for numbers that are multiples of both 3 and 5
 
-function fizzbuzz(n){
-  for (let i=1 ; i <= n ; i++){
-    if (i % 3 === 0 && i % 5 === 0){
-      console.log('fizzbuzz')
-    }
-    else if ( i % 3 === 0){
-      console.log('fizz')
-    }
-    else if (i % 5 === 0){
-      console.log('buzz')
-    }
-    else {
-      console.log(i)
+function fizzbuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("fizzbuzz");
+    } else if (i % 3 === 0) {
+      console.log("fizz");
+    } else if (i % 5 === 0) {
+      console.log("buzz");
+    } else {
+      console.log(i);
     }
   }
 }
-fizzbuzz(20)
+fizzbuzz(20);
 
 // #4 Anagram
 // Definition:- A word is an anagram of another word if they are using the same letters with the same quantity, but arranged differently.
@@ -329,28 +321,28 @@ fizzbuzz(20)
 // anagram('gainly', 'lying') //true;
 // anagram('listen', 'bye')  // false;
 
-const buildCharObject = str => {
-  const charObj = {}
-  for ( let char of str.replace(/[^\w]/g).toLowerCase()){
-    charObj[char] = charObj + 1 || 1
+const buildCharObject = (str) => {
+  const charObj = {};
+  for (let char of str.replace(/[^\w]/g).toLowerCase()) {
+    charObj[char] = charObj + 1 || 1;
   }
-  return charObj
-}
+  return charObj;
+};
 
 const anagram = (str1, str2) => {
-  const oneCharObject = buildCharObject(str1)
-  const twoCharObject = buildCharObject(str2)
-  if (Object.keys(oneCharObject).length !== Object.keys(twoCharObject).length){
-    return false
+  const oneCharObject = buildCharObject(str1);
+  const twoCharObject = buildCharObject(str2);
+  if (Object.keys(oneCharObject).length !== Object.keys(twoCharObject).length) {
+    return false;
   }
-  for (let char in oneCharObject){
-    if (oneCharObject[char] !== twoCharObject[char]){
-      return false
+  for (let char in oneCharObject) {
+    if (oneCharObject[char] !== twoCharObject[char]) {
+      return false;
     }
   }
-  return true
-}
-console.log(anagram('gainly', 'lying'))
+  return true;
+};
+console.log(anagram("gainly", "lying"));
 console.log(anagram("fried", "fired"));
 
 // #5 Find the Vowels
@@ -368,7 +360,7 @@ console.log(anagram("fried", "fired"));
 //   return count
 // }
 
-function findVowel(str){
+function findVowel(str) {
   let count = 0;
   let vowel = ["a", "e", "i", "o", "u"];
   for (let char of str.toLowerCase()) {
@@ -379,16 +371,16 @@ function findVowel(str){
   return count;
 }
 
-console.log(findVowel('hello'))
+console.log(findVowel("hello"));
 
 // #6 String Reverse
 // PROBLEM:- Write a function that takes a string as an argument and return a reverse version of the given string.
 
-function reverse(str){
-  return str = str.toLowerCase().split('').reverse().join('')
+function reverse(str) {
+  return (str = str.toLowerCase().split("").reverse().join(""));
 }
 
-console.log(reverse('hola'))
+console.log(reverse("hola"));
 
 // #7 Title Case a String
 // PROBLEM:- Write a function which takes a string of two or more word and capitalize the first letter of each word.
@@ -428,7 +420,7 @@ function replaceChar(inputStr, replaceThis, withThis) {
   return retVal.join("");
 }
 
-console.log(replaceChar('hello there', 'e', 'P'))
+console.log(replaceChar("hello there", "e", "P"));
 
 // #9 Remove all duplicates from an array of integers
 // PROBLEM:- write a function that will return an array without duplicate values in the array.
@@ -438,28 +430,28 @@ function removeDuplicate(arr) {
   return result;
 }
 
-console.log(removeDuplicate([1,1,1,2,3,3,5,6,7]))
+console.log(removeDuplicate([1, 1, 1, 2, 3, 3, 5, 6, 7]));
 
 // #10 Find all pairs in an array of integers whose sum is equal to a given number
 // PROBLEM:- Write a function that will pair up the array element whose sum is equal to a given number.
 
-let arr = [1,5,6,1,0,1, -3, 9]
+let arr = [1, 5, 6, 1, 0, 1, -3, 9];
 
 const findSumPairs = (arr, value) => {
-  let sumsLookup = {}
-  let output = []
+  let sumsLookup = {};
+  let output = [];
 
-  for (let i =0 ; i < arr.length ; i++){
-    let targetVal = value - arr[i]
+  for (let i = 0; i < arr.length; i++) {
+    let targetVal = value - arr[i];
 
-    if (sumsLookup[targetVal]){
-      output.push([arr[i], targetVal])
+    if (sumsLookup[targetVal]) {
+      output.push([arr[i], targetVal]);
     }
 
-    sumsLookup[arr[i]] = true
+    sumsLookup[arr[i]] = true;
   }
-  return output
-}
+  return output;
+};
 
 console.log(findSumPairs(arr, 6));
 
@@ -467,27 +459,27 @@ console.log(findSumPairs(arr, 6));
 
 arr = [2, "b", 1, "a", 2, 6, "a", 3, "b", 2, 9, 3, 2];
 
-function mostFrequent(arr){
-  let mf = 1 //most frequent count
-  let m = 0 //current count
-  let item
+function mostFrequent(arr) {
+  let mf = 1; //most frequent count
+  let m = 0; //current count
+  let item;
 
-  for(let i = 0; i < arr.length; i++){
-    for(let j = i; j < arr.length; j++){
-      if( arr[i] == arr[j]){
-        m++
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i; j < arr.length; j++) {
+      if (arr[i] == arr[j]) {
+        m++;
       }
-      if( mf < m){
-        mf = m
+      if (mf < m) {
+        mf = m;
       }
-      item = arr[i]
-   }
-   m = 0
+      item = arr[i];
+    }
+    m = 0;
   }
   console.log(item + " " + mf + " times");
 }
 
-mostFrequent(arr)
+mostFrequent(arr);
 
 // Longest Substring without repeating hcars
 
@@ -506,7 +498,7 @@ var lengthOfLongestSubstring = function (s) {
   return res;
 };
 
-console.log(lengthOfLongestSubstring("abcabcbb") + ' times');
+console.log(lengthOfLongestSubstring("abcabcbb") + " times");
 
 // Longest Repeating Character Replacement
 
@@ -535,8 +527,7 @@ var characterReplacement = function (s, k) {
   return max;
 };
 
-console.log(characterReplacement('ABAB', 2))
-
+console.log(characterReplacement("ABAB", 2));
 
 // Minimun Window Substring
 // Given two strings s and t, return the minimum window in s which will contain all the characters in t. If there is no such window in s that covers all characters in t, return the empty string "".
@@ -586,9 +577,9 @@ var minWindow = function (s, t) {
   return minSubString || "";
 };
 
-console.log(minWindow("ADOBECODEBANC", 'ABC'));
+console.log(minWindow("ADOBECODEBANC", "ABC"));
 
-// ANAGRAM  AGAIN 
+// ANAGRAM  AGAIN
 var isAnagram = function (s, t) {
   if (s.length !== t.length) {
     return false;
@@ -612,7 +603,7 @@ var isAnagram = function (s, t) {
 console.log(isAnagram("anagram", "nagaram"));
 
 // LRU CACHE
-strArr = ['A', 'B', 'C', 'D', 'A', 'E', 'D', 'Z']
+strArr = ["A", "B", "C", "D", "A", "E", "D", "Z"];
 
 function LRUCache(strArr) {
   //  initialize an index variable that would NOT be an output of the findIndex method
@@ -642,24 +633,22 @@ function LRUCache(strArr) {
   return actCache;
 }
 
-LRUCache(strArr)
-
+LRUCache(strArr);
 
 function add(x) {
-  return this + x
+  return this + x;
 }
 
-const age = 25
-const myAge = add.call(age, 2)
-console.log(myAge)
-
+const age = 25;
+const myAge = add.call(age, 2);
+console.log(myAge);
 
 // Assesment to find largest in an array
 const solution = (numbers) => {
-  return Math.max(...numbers)
+  return Math.max(...numbers);
 };
 
-console.log(solution([7,2,6,3]))
+console.log(solution([7, 2, 6, 3]));
 
 // A complete binary tree is a binary tree that each level except possibiliy the last level, is completed filled. Suppose you are giving a binary tree represented as an array. For example, [3, 6, 2, 9, -1, 10] retpresents the following binary tree, where -1 indicates it is a NULL node.
 const solution1 = (arr) => {
@@ -677,19 +666,36 @@ const solution1 = (arr) => {
   return left == right ? "" : left > right ? "Left" : "Right";
 };
 
-
-
 // Build a function that takes as input a string of letters and returns an encoded version of the string. The encoding scheme converts letters regardless of case, that appear once in the string to the '#' character and letters that appear more than once to the '&' character. Each letter should be encoded according to this scheme. The following strings and their conversions are provided as examples.
 // Input -> Output
 // one ->  ###
 // three -> ###&&
 // Heartbreak hotel -> &&&&&#&&&##&#&&#
 
+const strToEncode = "TTTFGB Yrf";
 
-const strToEncode = 'Let us test this'
+function encode(str) {
+  var letterCount = {};
+  var letters = str.toLowerCase().split("");
 
-const encode = (strToEncode) => {
-  return strToEncode
+  letters.forEach(function (letter) {
+    letterCount[letter] = (letterCount[letter] || 0) + 1;
+  });
+
+  return letters
+    .map(function (letter) {
+      return letterCount[letter] === 1 ? "#" : "&";
+    })
+    .join("");
 }
 
-console.log(encode(strToEncode))
+// function encode(word) {
+//   const letters = word.toLowerCase().split("");
+//   const counts = letters.reduce(
+//     (ct, ltr) => ((ct[ltr] = (ct[ltr] || 0) + 1), ct),
+//     {}
+//   );
+//   return letters.map((letter) => (counts[letter] === 1 ? "#" : "&")).join("");
+// }
+
+console.log(encode(strToEncode));
