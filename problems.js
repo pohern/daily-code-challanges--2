@@ -267,7 +267,7 @@ function Fibonacci(num){
   return result[num]
 }
 
-console.log(Fibonacci(6))
+console.log(Fibonacci(9))
 
 function fibonacci(num) {
   if (num < 2) {
@@ -276,13 +276,13 @@ function fibonacci(num) {
   return fibonacci(num - 1) + fibonacci(num - 2);
 }
 
-console.log(fibonacci(6));
+console.log(fibonacci(9));
 
 function FFibonacci(n) { 
     if (n <= 2) return 1; 
     return FFibonacci(n - 1) + FFibonacci(n - 2);
 }
-console.log(FFibonacci(10) + ' here')
+console.log(FFibonacci(6) + ' here')
 
 // function F(n) {
 //   if (n == 0) {
@@ -662,7 +662,7 @@ const solution = (numbers) => {
 console.log(solution([7,2,6,3]))
 
 // A complete binary tree is a binary tree that each level except possibiliy the last level, is completed filled. Suppose you are giving a binary tree represented as an array. For example, [3, 6, 2, 9, -1, 10] retpresents the following binary tree, where -1 indicates it is a NULL node.
-const solution = (arr) => {
+const solution1 = (arr) => {
   if (!arr) return "";
   if (arr.length === 0) return "";
   const sum = (arr, idx) => {
@@ -676,3 +676,11 @@ const solution = (arr) => {
   const right = sum(arr, 3);
   return left == right ? "" : left > right ? "Left" : "Right";
 };
+
+const strToEncode = 'Let us test this'
+
+const encode = (strToEncode) => {
+  return strToEncode
+}
+
+console.log(encode(strToEncode))
