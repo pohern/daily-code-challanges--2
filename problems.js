@@ -762,33 +762,3 @@ const crop = (message, maxLength) => {
 //   });
 // }
 
-// "use strict";
-
-// /* global CustomError, getLikedBrands, getTopBrandsForGender */
-
-// function solution(U, N) {
-//   return new Promise(async (resolve, reject) => {
-//     try {
-//       const likedBrands = await getLikedBrands(U.id);
-//       const topBrandsForGender = await getTopBrandsForGender(U.gender);
-
-//       const sampleSpace = likedBrands.map((brand) => brand.name || "");
-
-//       topBrandsForGender.forEach((brand) => {
-//         if (!sampleSpace.includes(brand.name)) {
-//           sampleSpace.push(brand.name);
-//         }
-//       });
-
-//       if (sampleSpace.length < N) {
-//         reject(new CustomError("Not enough data"));
-//       }
-
-//       const topBrands = sampleSpace.slice(0, N);
-
-//       resolve(topBrands);
-//     } catch (error) {
-//       reject(new CustomError("Not enough data"));
-//     }
-//   });
-// }
