@@ -738,10 +738,10 @@ function crop(message, K) {
 // |: or
 // $: end-of-string
 
-const crop = (message, maxLength) => {
-  const part = message.substring(0, maxLength + 1);
-  return part.substring(0, part.lastIndexOf(" ")).trimEnd();
-};
+// const crop = (message, maxLength) => {
+//   const part = message.substring(0, maxLength + 1);
+//   return part.substring(0, part.lastIndexOf(" ")).trimEnd();
+// };
 
 // function solution(U, N) {
 //   return new Promise((resolve, reject) => {
@@ -762,3 +762,19 @@ const crop = (message, maxLength) => {
 //   });
 // }
 
+
+// Write a function called "reconcileHelper" that processes two arrays of integers. Each array passed in will have only distinct numbers and the arrays are not sorted. Your function should be able to return which numbers are in array a, but not array b, and which numbers are in array b, but not in array a. See below for example output.
+
+function reconcileHelper(a, b) {
+  let arr1 = a.sort((a, b) => a - b)
+  console.log(arr1)
+  let arr2 = b.sort((a, b) => a - b);
+  console.log(arr2);
+  let diffA = arr1.filter(x => arr2.indexOf(x) === -1)
+  let diffB = arr2.filter(x => arr1.indexOf(x) === -1)
+  // console.log(diffA)
+  // console.log(diffB)
+  return [diffA, diffB]
+}
+
+console.log(reconcileHelper([5, 3, 4], [4, 3, 10, 6]))
