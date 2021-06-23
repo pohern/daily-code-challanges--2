@@ -762,19 +762,30 @@ function crop(message, K) {
 //   });
 // }
 
-
 // Write a function called "reconcileHelper" that processes two arrays of integers. Each array passed in will have only distinct numbers and the arrays are not sorted. Your function should be able to return which numbers are in array a, but not array b, and which numbers are in array b, but not in array a. See below for example output.
 
 function reconcileHelper(a, b) {
-  let arr1 = a.sort((a, b) => a - b)
-  console.log(arr1)
+  let arr1 = a.sort((a, b) => a - b);
+  console.log(arr1);
   let arr2 = b.sort((a, b) => a - b);
   console.log(arr2);
-  let diffA = arr1.filter(x => arr2.indexOf(x) === -1)
-  let diffB = arr2.filter(x => arr1.indexOf(x) === -1)
+  let diffA = arr1.filter((x) => arr2.indexOf(x) === -1);
+  let diffB = arr2.filter((x) => arr1.indexOf(x) === -1);
   // console.log(diffA)
   // console.log(diffB)
-  return [diffA, diffB]
+  return [diffA, diffB];
 }
 
-console.log(reconcileHelper([5, 3, 4], [4, 3, 10, 6]))
+console.log(reconcileHelper([5, 3, 4], [4, 3, 10, 6]));
+
+// Frequencies
+// Create am object with the nique values of an array as keys and their freqiency as the values
+// 1. Use Array.prototype.reduce() to map unique values to an objects keys, adding to exisiting keys every time the same value is encountered
+
+const frequencies = (arr) =>
+  arr.reduce((a, v) => {
+    a[v] = a[v] ? a[v] + 1 : 1;
+    return a;
+  }, {});
+
+console.log(frequencies(['a', 'b', 'v', 'c', 'a']))
