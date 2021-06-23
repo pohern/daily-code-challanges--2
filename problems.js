@@ -788,4 +788,18 @@ const frequencies = (arr) =>
     return a;
   }, {});
 
-console.log(frequencies(['a', 'b', 'v', 'c', 'a']))
+console.log(frequencies(["a", "b", "v", "c", "a"]));
+
+// Palindrome Number
+
+const isNumPalindrome = (x) => {
+  let reverse = parseInt(x.toString().split("").reverse().join(""));
+
+  if (x === reverse) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log(isNumPalindrome(123))
