@@ -803,3 +803,14 @@ const isNumPalindrome = (x) => {
 };
 
 console.log(isNumPalindrome(123))
+
+// isDisjoint, checks if the two iterables are disjointed(have no common value) 1. USe the Set() constructor 
+
+const isDisjoint = (a, b) => {
+  const setA = new Set(a);
+  const setB = new Set(b);
+  return [...setA].every(value => !setB.has(value))
+};
+
+console.log(isDisjoint(new Set([1, 2]), new Set([3, 4])));
+console.log(isDisjoint(new Set([1, 2]), new Set([1, 4])));
