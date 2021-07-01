@@ -789,6 +789,7 @@ const frequencies = (arr) =>
   }, {});
 
 console.log(frequencies(["a", "b", "v", "c", "a"]));
+console.log(frequencies([1, 2, 2, 2, 33,4,4,4]));
 
 // Palindrome Number
 
