@@ -33,3 +33,22 @@ function differentRightMostBit(n, m) {
 
 console.log(differentRightMostBit(11, 13))
 console.log(differentRightMostBit(7, 23));
+
+function solution(T) {
+    if (34 <= T && T < 35){
+        return "Hypothermia"
+    } 
+    else if (T === 35){
+        return "Normal"
+    } 
+    else if (T > 35 && T < 41){
+        return "Fever"
+    } 
+    else if (41 <= T  && T < 42){
+        return "Hyperpyrexia"
+    } 
+    else {
+        return "Invalid Entry"
+    }
+}
+console.log(solution(35.3))
