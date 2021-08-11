@@ -835,3 +835,31 @@ console.log(isDisjoint(new Set([1, 2]), new Set([3, 4])));
 console.log(isDisjoint(new Set([1, 2]), new Set([1, 4])));
 
 
+// let x = {},
+//   y = { name: "Ronny" },
+//   z = { name: "John" };
+
+// x[y] = { name: "Vivek" };
+// x[z] = { name: "Akki" };
+
+// console.log(x[y]);
+
+// Create the hashmap
+var animal = {};
+// Add keys to the hashmap
+animal['cat'] = { sound: 'meow', age:8 };
+animal['dog'] = { sound: 'bark', age:10 };
+animal['bird'] = { sound: 'tweet', age:2 };
+animal['cow'] = { sound: 'moo', age:5 };
+
+for (var x in animal)
+{
+    console.log('Key:\n—- ' + x + '\n');
+    console.log('Values: ');
+    var value = animal[x];
+    for (var y in value)
+    {
+        console.log('—- ' + y + ':' + value[y]);
+    }
+    console.log('\n');
+}
