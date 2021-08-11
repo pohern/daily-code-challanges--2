@@ -93,6 +93,18 @@ function testing(str) {
 }
 
 console.log(testing(123), "here");
+
+function changeNumsInStr(str) {
+  let arr = str.split(" ");
+  arr[2] = parseInt(arr[2]) * 4;
+  arr[9] = parseInt(arr[9]) + 4;
+  return arr.join(' ')
+}
+
+console.log(
+  changeNumsInStr("There are 12 apples I am going to eat 3"),
+  "here2"
+);
 // - Write a function called removeEnds that accepts a single string argument, then returns the a string with the first and last characters removed.
 // - If the length of the string argument is less than 3, return an empty string.
 
