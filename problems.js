@@ -10,7 +10,7 @@ var shuffle = function (nums, n) {
   console.log(array);
   return array.flat();
 };
-console.log(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5));
+console.log(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5), 'Shuffle');
 
 // Challenge: 03-sumNumbers
 
@@ -87,6 +87,12 @@ function reverseUpcaseString(str) {
 
 console.log(reverseUpcaseString("SEI Rocks!"));
 
+function testing(str) {
+  let num = str.toString()
+  return num.split("")[1] * 4;
+}
+
+console.log(testing(123), "here");
 // - Write a function called removeEnds that accepts a single string argument, then returns the a string with the first and last characters removed.
 // - If the length of the string argument is less than 3, return an empty string.
 
@@ -246,7 +252,7 @@ function isPalindrome(str) {
   return str === str.split("").reverse().join("");
 }
 
-console.log(isPalindrome("turtle"));
+console.log(isPalindrome("turtle"), 'Palindrome');
 
 // #2 Fibonacci
 // Definition:- Fibonacci sequence is basically a sequence of number where every number in the sequence is the sum of the two previous one. A Fibonacci sequence is something look like this — 0,1,1,2,3,5,8,13,21,….
@@ -641,7 +647,7 @@ function add(x) {
 
 const age = 25;
 const myAge = add.call(age, 2);
-console.log(myAge);
+console.log(myAge, 'MyAge');
 
 // Assesment to find largest in an array
 const solution = (numbers) => {
@@ -815,3 +821,5 @@ const isDisjoint = (a, b) => {
 
 console.log(isDisjoint(new Set([1, 2]), new Set([3, 4])));
 console.log(isDisjoint(new Set([1, 2]), new Set([1, 4])));
+
+
