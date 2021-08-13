@@ -289,7 +289,7 @@ function fibonacci(num) {
   return fibonacci(num - 1) + fibonacci(num - 2);
 }
 
-console.log(fibonacci(9));
+console.log(fibonacci(12));
 
 function FFibonacci(n) {
   if (n <= 2) return 1;
@@ -863,3 +863,58 @@ for (var x in animal)
     }
     console.log('\n');
 }
+
+function fake_news(sentence, increaser, multiplier) {
+  let sentenceArray = sentence.split(" ");
+  for (let i = 0; i < sentenceArray.length; i++) {
+    if (!isNaN(parseInt(sentenceArray[i]))) {
+      sentenceArray[i] = parseInt(sentenceArray[i]) + increaser;
+      break;
+    }
+  }
+  for (let i = sentenceArray.length - 1; i >= 0; i--) {
+    if (!isNaN(parseInt(sentenceArray[i]))) {
+      sentenceArray[i] = (parseInt(sentenceArray[i]) * multiplier).toFixed(2);
+      break;
+    }
+  }
+  return sentenceArray.join(" ");
+}
+
+const result = fake_news(
+  "A full battery will get you 100 miles in the 2017 Ford Focus Electric, whereas the Nissan Leaf has a range of 111 miles.",
+  21,
+  0.754
+);
+
+console.log(result);
+
+// function fake_news(sentence, increaser, multiplier) {
+//   const regex = /^(\D*\s*)(\d+\.?\d*|\.\d+)(.*\s)(\d+\.?\d*|\.\d+)(\D*\s*)$/;
+//   if (!regex.test(sentence)) {
+//     return false;
+//   }
+//   return sentence.replace(regex, (fullMatch, t1, firstNum, t2, lastNum, t3) => {
+//     return (
+//       t1 +
+//       (parseInt(firstNum) + increaser) +
+//       t2 +
+//       (parseInt(lastNum) * multiplier * 100) / 100 +
+//       t3
+//     );
+//   });
+// }
+// const result = fake_news(
+//   "A full battery will get you 100 miles in the 2017 Ford Focus Electric, whereas the Nissan Leaf has a range of 111 miles.",
+//   21,
+//   0.754
+// );
+
+// console.log(result);
+
+for (var i = 0; i<3; i++){
+  setTimeout(() => console.log(i), 1)
+} // 3 3 3 since that is the value that i ends up, becasue of var
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 1);
+} // 0, 1, 2 since let is functional scope
