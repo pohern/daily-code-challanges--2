@@ -918,3 +918,13 @@ for (var i = 0; i<3; i++){
 for (let i = 0; i < 3; i++) {
   setTimeout(() => console.log(i), 1);
 } // 0, 1, 2 since let is functional scope
+
+let array = [1,1,1,1,2,2,2,2,3,3,4,4,5,5]
+
+const removeDuplicate2 = (a) => {
+  let uniqueArray = [new Set(a)]
+  return uniqueArray
+}
+
+console.log(removeDuplicate2(array), 'removeDuplicates')
+
