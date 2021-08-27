@@ -52,3 +52,11 @@ function solution(T) {
     }
 }
 console.log(solution(35.3))
+
+const primes = [2];
+for(let n = 3; n <= 100; n += 2){
+    if(primes.every(p => n % p !== 0)){
+        primes.push(n)
+    }
+}
+console.log(primes, 'LINE 62')
