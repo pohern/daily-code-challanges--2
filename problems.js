@@ -928,3 +928,63 @@ const removeDuplicate2 = (a) => {
 
 console.log(removeDuplicate2(array), 'removeDuplicates')
 
+let arr12 = [1, 1, 2, 3, 4, 5, 5, 6, 7, 8];
+let arr13 = [-5, -5, 0, 1, 2, 6]
+
+const dupes = (a) => {
+  // a.sort();
+  let duplicates = [];
+  for (let i = 0; i < a.length; i++) {
+    for (let j = i + 1; j < a.length; j++) {
+      if ((a[i] = a[j])) {
+        duplicates.push(a[i]);
+      }
+    }
+  }
+  return duplicates;
+};
+
+const dupesWithSort = (a) => {
+  // a.sort();
+  let duplicates = [];
+  for (let i = 0; i < a.length; i++) {
+    let firstNum = a[i];
+    let secondNum = a[i + 1];
+    if (firstNum === secondNum) {
+      duplicates.push(firstNum);
+    }
+  }
+  return duplicates;
+};
+
+console.log(dupesWithSort(arr13), "here")
+
+// const dupesWithSort = (a) => {
+//   a.sort();
+//   let duplicates = [];
+//   for (let i = 0; i < a.length; i++) {
+//     let firstNum = a[i];
+//     if (i < a.length) {
+//       let secondNum = a[i + 1];
+//       if (firstNum === secondNum) {
+//         duplicates.push(firstNum);
+//       }
+//     }
+//   }
+//   return duplicates;
+// };
+
+// Shifted array
+// [1, 2, 3, 4] -> "Shifted" 2 to the right -> 
+// Output: [3, 4, 1, 2]
+// Input: 2
+// Index of smallest number: 2
+// [1, 2, 3, 4, 5, 6, 7, 8] -> Shift 3 -> 
+
+// Input: [6, 7, 8, 1, 2, 3, 4, 5]
+// Output: 3
+// Index of smallest number: 3
+
+// Input: [3, 4, 5, -3, -2, -1]: Original [-3, -2, -1, 3, 4, 5]
+// Output: 3
+// Index of smallest number: 3
