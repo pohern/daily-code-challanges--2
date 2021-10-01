@@ -988,3 +988,8 @@ console.log(dupesWithSort(arr13), "here")
 // Input: [3, 4, 5, -3, -2, -1]: Original [-3, -2, -1, 3, 4, 5]
 // Output: 3
 // Index of smallest number: 3
+
+const data=[1,2,3,4,5,6]
+
+data.splice(2,1)
+console.log(data)
